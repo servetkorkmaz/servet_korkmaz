@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servet KORKMAZ | Kişisel Web Sayfası</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome (Ikonlar için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Temel fontu ayarla */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #e2e8f0; /* slate-200 */
+        }
+
+        /* Yazı animasyonu için cursor */
+        .typing-cursor {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- ===== HEADER / NAVİGASYON ===== -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-700/50">
+        <nav class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#ana-sayfa" class="text-2xl font-bold text-white transition-colors duration-300 hover:text-cyan-400">
+                        Servet K.
+                    </a>
+                </div>
+                
+                <!-- Desktop Menü -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#hakkimda" class="px-3 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-300">Hakkımda</a>
+                        <a href="#projeler" class="px-3 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-300">Projeler</a>
+                        <a href="#yetkinlikler" class="px-3 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-300">Yetkinlikler</a>
+                        <a href="#iletisim" class="px-3 py-2 rounded-md text-sm font-medium text-cyan-400 border border-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300">İletişime Geç</a>
+                    </div>
+                </div>
+                
+                <!-- Mobil Menü Butonu -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-400" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Menüyü aç</span>
+                        <!-- Hamburger ikonu -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Kapatma ikonu (X) -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobil Menü -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hakkimda" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-700 transition-all duration-300">Hakkımda</a>
+                <a href="#projeler" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-700 transition-all duration-300">Projeler</a>
+                <a href="#yetkinlikler" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-700 transition-all duration-300">Yetkinlikler</a>
+                <a href="#iletisim" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 hover:text-slate-900 hover:bg-cyan-400 transition-all duration-300">İletişime Geç</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ANA SAYFA (HERO) ===== -->
+    <main>
+        <section id="ana-sayfa" class="min-h-screen flex items-center pt-16">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Buraya kendi resminizi ekleyebilirsiniz -->
+                    <img class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-cyan-400 shadow-xl shadow-cyan-500/20" 
+                         src="https://placehold.co/200x200/0f172a/e0f2fe?text=SK" 
+                         alt="Servet KORKMAZ Profil Fotoğrafı">
+
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+                        Merhaba, ben <span class="text-cyan-400">Servet KORKMAZ</span>
+                    </h1>
+                    <p class="text-2xl sm:text-3xl font-light text-slate-300">
+                        Ben bir <span id="typing-text" class="font-medium text-cyan-400"></span><span class="typing-cursor text-cyan-400">|</span>
+                    </p>
+                    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
+                        Dijital dünyada yenilikçi ve kullanıcı odaklı çözümler üretiyorum. Fikirlerinizi hayata geçirmek için buradayım.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#projeler" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105">
+                            Projelerimi Gör
+                        </a>
+                        <a href="#iletisim" class="inline-block px-8 py-3 bg-slate-700 text-white font-semibold rounded-lg shadow-lg hover:bg-slate-600 transition-all duration-300 transform hover:scale-105">
+                            Benimle Çalış
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HAKKIMDA ===== -->
+        <section id="hakkimda" class="py-24 bg-slate-800">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-cyan-400 tracking-wide uppercase">Hakkımda</h2>
+                    <p class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                        Tutkulu Bir Geliştirici
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <!-- Buraya kendi resminizi ekleyebilirsiniz -->
+                        <img class="rounded-lg shadow-2xl" 
+                             src="https://placehold.co/600x400/1e293b/99f6e4?text=Hakkimda+Gorsel" 
+                             alt="Hakkımda görseli">
+                    </div>
+                    <div class="text-lg text-slate-300 space-y-5">
+                        <p>
+                            Merhaba! Ben Servet. Teknolojiye ve tasarıma olan tutkumla, kod satırlarını estetik ve işlevsel dijital deneyimlere dönüştürüyorum. 
+                            Yıllar içinde edindiğim tecrübeyle, karmaşık problemleri basit ve zarif çözümlere kavuşturmayı hedefliyorum.
+                        </p>
+                        <p>
+                            Kullanıcı deneyimini (UX) her zaman ön planda tutarak, hızlı, erişilebilir ve ölçeklenebilir web uygulamaları geliştiriyorum. 
+                            Sürekli öğrenmeyi ve kendimi güncel tutmayı seviyorum.
+                        </p>
+                        <ul class="space-y-2 pt-4">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-cyan-400 mr-3"></i>
+                                Modern JavaScript (ES6+), React ve Node.js uzmanlığı.
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-cyan-400 mr-3"></i>
+                                Piksel mükemmelliğinde arayüz tasarımları.
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-cyan-400 mr-3"></i>
+                                Agile/Scrum metodolojileri ile takım çalışması.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJELER ===== -->
+        <section id="projeler" class="py-24">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-cyan-400 tracking-wide uppercase">Portfolyo</h2>
+                    <p class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                        Son Çalışmalarım
+                    </p>
+                    <p class="mt-4 text-xl text-slate-400">
+                        Gurur duyduğum bazı projeler. Daha fazlası için iletişime geçebilirsiniz.
+                    </p>
+                </div>
+
+                <!-- Proje Kartları -->
+                <div class="mt-16 grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <!-- Proje 1 -->
+                    <div class="bg-slate-800 rounded-lg shadow-xl overflow-hidden border border-slate-700/50 transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-500/20">
+                        <img class="h-56 w-full object-cover" 
+                             src="https://placehold.co/600x400/1e293b/99f6e4?text=Proje+1" 
+                             alt="Proje 1 Görseli">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-Ticaret Platformu</h3>
+                            <p class="text-slate-400 mb-4">
+                                React ve Node.js kullanarak geliştirdiğim kapsamlı bir e-ticaret çözümü.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                            <a href="#" class="font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-300">Detayları Gör &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Proje 2 -->
+                    <div class="bg-slate-800 rounded-lg shadow-xl overflow-hidden border border-slate-700/50 transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-500/20">
+                        <img class="h-56 w-full object-cover" 
+                             src="https://placehold.co/600x400/1e293b/99f6e4?text=Proje+2" 
+                             alt="Proje 2 Görseli">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Sosyal Medya Uygulaması</h3>
+                            <p class="text-slate-400 mb-4">
+                                Gerçek zamanlı mesajlaşma ve gönderi paylaşımı özellikleri sunan bir sosyal platform.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Vue.js</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Tailwind CSS</span>
+                            </div>
+                            <a href="#" class="font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-300">Detayları Gör &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Proje 3 -->
+                    <div class="bg-slate-800 rounded-lg shadow-xl overflow-hidden border border-slate-700/50 transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-500/20">
+                        <img class="h-56 w-full object-cover" 
+                             src="https://placehold.co/600x400/1e293b/99f6e4?text=Proje+3" 
+                             alt="Proje 3 Görseli">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Veri Görselleştirme Paneli</h3>
+                            <p class="text-slate-400 mb-4">
+                                D3.js ve Python (Flask) kullanarak karmaşık verileri anlaşılır grafiklere dönüştüren dashboard.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">D3.js</span>
+                                <span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Flask</span>
+                            </div>
+                            <a href="#" class="font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-300">Detayları Gör &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== YETKİNLİKLER ===== -->
+        <section id="yetkinlikler" class="py-24 bg-slate-800">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-cyan-400 tracking-wide uppercase">Teknolojiler</h2>
+                    <p class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                        Kullandığım Araçlar
+                    </p>
+                    <p class="mt-4 text-xl text-slate-400">
+                        Projelerimde aktif olarak kullandığım ve uzmanlaştığım teknolojiler.
+                    </p>
+                </div>
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                        <!-- İkonları Font Awesome'dan aldım, istediğiniz gibi değiştirebilirsiniz -->
+                        <div class="text-center p-4">
+                            <i class="fab fa-react text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">React</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fab fa-node-js text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">Node.js</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fab fa-js-square text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">JavaScript</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fab fa-python text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">Python</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fas fa-database text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">SQL/NoSQL</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fab fa-git-alt text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">Git</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <i class="fab fa-figma text-7xl text-cyan-400 transition-transform duration-300 hover:scale-110"></i>
+                            <p class="mt-3 text-lg font-medium text-white">Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== İLETİŞİM ===== -->
+        <section id="iletisim" class="py-24">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <!-- Sol Taraf: Metin -->
+                    <div class="max-w-md">
+                        <h2 class="text-base font-semibold text-cyan-400 tracking-wide uppercase">İletişim</h2>
+                        <p class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                            Birlikte Çalışalım
+                        </p>
+                        <p class="mt-4 text-xl text-slate-400">
+                            Bir projeniz mi var veya sadece bir kahve içip teknolojiden mi konuşmak istiyorsunuz? 
+                            Bana ulaşmaktan çekinmeyin.
+                        </p>
+                        <div class="mt-8 space-y-4 text-lg text-slate-300">
+                            <p class="flex items-center">
+                                <i class="fas fa-envelope text-cyan-400 w-6 mr-3"></i>
+                                <!-- E-posta adresinizi buraya yazın -->
+                                <a href="mailto:ornek@mail.com" class="hover:text-cyan-400">ornek@mail.com</a>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-cyan-400 w-6 mr-3"></i>
+                                İstanbul, Türkiye
+                            </p>
+                        </div>
+                         <div class="mt-8 flex space-x-6">
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-125">
+                                <i class="fab fa-github text-3xl"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-125">
+                                <i class="fab fa-linkedin text-3xl"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-transform duration-300 hover:scale-125">
+                                <i class="fab fa-twitter text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Taraf: Form -->
+                    <div class="bg-slate-800 p-8 md:p-10 rounded-lg shadow-2xl border border-slate-700/50">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300">Adınız Soyadınız</label>
+                                <div class="mt-1">
+                                    <input type="text" name="name" id="name" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300" placeholder="Servet Korkmaz">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300">E-posta Adresiniz</label>
+                                <div class="mt-1">
+                                    <input type="email" name="email" id="email" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300" placeholder="ornek@mail.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300">Mesajınız</label>
+                                <div class="mt-1">
+                                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300" placeholder="Merhaba Servet..."></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-lg font-medium text-slate-900 bg-cyan-500 hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 focus:ring-offset-slate-800 transition-all duration-300 transform hover:scale-105">
+                                    Mesajı Gönder
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-slate-900 border-t border-slate-700/50">
+        <div class="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-base text-slate-400">
+                &copy; 2025 Servet KORKMAZ. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Mobil Menü Fonksiyonu ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = menuButton.querySelector('svg:first-child');
+            const closeIcon = menuButton.querySelector('svg:last-child');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Mobil menüdeki linklere tıklanınca menüyü kapat
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+
+
+            // --- Typing Animasyonu Fonksiyonu ---
+            const typingTextElement = document.getElementById('typing-text');
+            const words = ["Web Geliştirici", "Tasarımcı", "Freelancer", "Teknoloji Meraklısı"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    // Silme işlemi
+                    typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    // Yazma işlemi
+                    typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 100 : 200;
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    // Kelime bitti, beklet ve silmeye başla
+                    typeSpeed = 2000; // Bekleme süresi
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    // Kelime silindi, sonrakine geç
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeSpeed = 500; // Yeni kelimeye başlama hızı
+                }
+
+                setTimeout(typeWriter, typeSpeed);
+            }
+
+            // Animasyonu başlat
+            if (typingTextElement) {
+                typeWriter();
+            }
+        });
+    </script>
+
+</body>
+</html>
