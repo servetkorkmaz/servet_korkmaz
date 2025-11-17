@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Görüntü Düzenleyici",
+  "description": "Google'ın Gemini yapay zeka modelini kullanarak metin istemleriyle görüntüleri düzenlemek için bir uygulama.",
+  "requestFramePermissions": []
+}
